@@ -10,7 +10,8 @@ USER node
 RUN npm ci
 COPY --chown=node:node . /home/node/app
 ENV NODE_ENV=production
-RUN npm run build -- --report
+RUN npm run lint
+RUN npm run build 
 
 FROM nginx:1.13.7-alpine
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
