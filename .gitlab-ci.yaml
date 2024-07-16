@@ -1,0 +1,11 @@
+stages:
+  - run_script
+
+variables:
+  ARG1: "default_value1"
+  ARG2: "default_value2"
+
+run-python-script:
+  stage: run_script
+  script:
+    - python print_args.py --arg1 "${ARG1}" --arg2 "${ARG2}"
